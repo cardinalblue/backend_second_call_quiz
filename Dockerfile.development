@@ -1,0 +1,2 @@
+FROM ruby:3.1.2-alpine3.16
+RUN apk add -U make gcc musl-dev sqlite-dev git tzdata

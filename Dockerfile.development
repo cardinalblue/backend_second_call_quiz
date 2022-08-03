@@ -1,2 +1,5 @@
-FROM ruby:3.1.2-alpine3.16
-RUN apk add -U make gcc musl-dev sqlite-dev git tzdata
+FROM --platform=linux/amd64 ruby:3.1.2-alpine3.16
+WORKDIR /usr/local/src/app
+RUN apk add -U make gcc musl-dev postgresql-dev git tzdata postgresql-client
+COPY Gemfile Gemfile.lock ./
+RUN bundle install --jobs 8

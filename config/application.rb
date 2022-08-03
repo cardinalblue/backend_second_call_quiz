@@ -18,5 +18,7 @@ module SecondCallQuiz
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    require 'rack/x_md5'
+    config.middleware.use Rack::XMd5
   end
 end
